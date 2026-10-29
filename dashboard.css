@@ -1,0 +1,249 @@
+/* Shared tokens keep every dashboard surface in the selected appearance. */
+.stApp {background:var(--bg);color:var(--text);font-family:Inter,"Segoe UI",sans-serif}
+[data-testid="stHeader"] {background:var(--bg);border-bottom:1px solid var(--line)}
+.block-container {max-width:1500px;padding-top:3rem;padding-bottom:2rem}
+h1,h2,h3,h4,p,label {color:inherit}
+/* Streamlit's light-theme widgets set their own text colors. Override the
+   actual text nodes, rather than relying on inheritance from .stApp. */
+[data-testid="stSidebar"],
+[data-testid="stMain"],
+[data-testid="stMarkdownContainer"],
+[data-testid="stWidgetLabel"],
+[data-testid="stWidgetLabel"] p,
+[data-testid="stRadio"] label,
+[data-testid="stRadio"] label p,
+[data-testid="stCheckbox"] label,
+[data-testid="stCheckbox"] label p,
+[data-testid="stToggle"] label,
+[data-testid="stToggle"] label p,
+[data-testid="stFileUploader"] label,
+[data-testid="stFileUploader"] label p,
+[data-testid="stFileUploaderDropzoneInstructions"],
+[data-testid="stFileUploaderDropzoneInstructions"] span,
+[data-testid="stFileUploaderFileName"],
+[data-testid="stSlider"] [data-testid="stTickBar"],
+[data-testid="stExpander"] summary p {
+    color:var(--text)!important;
+}
+[data-testid="stCaptionContainer"],
+[data-testid="stCaptionContainer"] *,
+[data-testid="stCaptionContainer"] p,
+[data-testid="stFileUploaderDropzoneInstructions"] small,
+[data-testid="stFileUploaderFileData"] small {
+    color:var(--muted)!important;
+}
+[data-testid="stTooltipIcon"] {color:var(--muted)!important}
+[data-testid="stTooltipHoverTarget"] svg {color:var(--muted)!important;fill:currentColor}
+[data-testid="stButton"]>button,
+[data-testid="stDownloadButton"]>button {
+    background:var(--surface)!important;
+    color:var(--text)!important;
+    border:1px solid var(--line)!important;
+    border-radius:9px;
+    min-height:43px;
+}
+[data-testid="stButton"]>button:hover {
+    background:var(--soft)!important;
+    border-color:var(--accent)!important;
+}
+[data-testid="stButton"]>button[kind="primary"],
+[data-testid="stDownloadButton"]>button {
+    background:#087f70!important;color:#ffffff!important;border-color:#087f70!important;
+}
+[role="tooltip"] {background:var(--raised)!important;color:var(--text)!important}
+[data-baseweb="input"] input::placeholder {color:var(--muted)!important;opacity:1}
+button [data-testid="stMarkdownContainer"],
+button [data-testid="stMarkdownContainer"] p {color:inherit!important}
+h1,h2,h3 {letter-spacing:-.04em;color:var(--text)}
+h1 {font-size:2.65rem!important;font-weight:750!important;line-height:1.15!important}
+h3 {font-size:1.15rem!important;font-weight:650!important}
+[data-testid="stCaptionContainer"],.intro {color:var(--muted)}
+[data-testid="stSidebar"] {background:var(--surface);border-right:1px solid var(--line)}
+[data-testid="stSidebar"] [data-testid="stSidebarContent"] {padding-top:1rem}
+.brand {display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.5rem;letter-spacing:-.05em;color:var(--text);margin:0 0 8px}
+.brand-mark {display:grid;place-items:center;width:38px;height:40px;border-radius:12px;background:linear-gradient(140deg,#20b896,#087f70);color:white;font-size:22px;box-shadow:0 4px 12px #087f7028}
+[data-testid="stSidebar"] [role="radiogroup"] {gap:9px}
+[data-testid="stSidebar"] [role="radiogroup"] label {background:var(--raised);border:1px solid var(--line);border-radius:10px;padding:10px 12px;transition:border-color .15s,background .15s}
+[data-testid="stSidebar"] [role="radiogroup"] label:has(input:checked) {background:var(--soft);border-color:var(--accent)}
+[data-testid="stSidebar"] hr {margin:1.5rem 0;border-color:var(--line)}
+[data-testid="stSidebar"] [data-testid="stCaptionContainer"] {font-size:.74rem}
+.eyebrow {color:var(--muted);font-size:.65rem;font-weight:750;letter-spacing:.16em;margin-bottom:12px}
+.page-heading {display:flex;justify-content:space-between;align-items:center;gap:20px}
+.page-heading h1 {margin:0;padding:0}
+.heading-dot {color:var(--accent)}
+.intro {font-size:.95rem;line-height:1.7;margin:12px 0 30px}
+.ready-badge {display:inline-flex;align-items:center;gap:8px;background:var(--soft);border:1px solid var(--line);border-radius:30px;padding:8px 13px;color:var(--badge);font-size:.72rem;font-weight:650;white-space:nowrap}
+.ready-dot,.preview-dot {width:6px;height:6px;background:var(--accent);border-radius:50%;display:inline-block}
+[data-testid="stMetric"] {position:relative;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px 24px;min-height:134px;box-shadow:0 5px 20px var(--shadow);overflow:hidden}
+[data-testid="stMetric"]:before {content:"";position:absolute;left:0;top:24px;width:3px;height:28px;background:var(--accent);border-radius:0 3px 3px 0}
+[data-testid="stMetricLabel"] {color:var(--muted);font-size:.78rem;font-weight:600}
+[data-testid="stMetricValue"] {color:var(--text);font-size:2.5rem;font-weight:700;letter-spacing:-.05em;font-variant-numeric:tabular-nums}
+.workspace-divider {height:1px;background:var(--line);margin:14px 0 24px}
+[data-testid="stVerticalBlockBorderWrapper"]>div,[data-testid="stLayoutWrapper"]>[data-testid="stVerticalBlock"]:is([style*="border"]) {background:var(--surface);border-color:var(--line)!important;border-radius:16px!important}
+[data-testid="stVerticalBlockBorderWrapper"]>div {padding:24px}
+[data-testid="stFileUploader"] {background:var(--raised);border:1px dashed var(--line);border-radius:12px;padding:8px}
+[data-testid="stFileUploaderDropzone"] {background:transparent;color:var(--text)}
+[data-testid="stFileUploaderDropzone"] small {color:var(--muted)}
+.stButton>button,.stDownloadButton>button,[data-testid="stFileUploader"] button {background:var(--surface);border:1px solid var(--line);color:var(--text);border-radius:9px;min-height:43px;font-weight:600;transition:background .15s,border-color .15s}
+.stButton>button:hover,.stDownloadButton>button:hover {background:var(--soft);border-color:var(--accent);color:var(--accent)}
+.stButton>button[kind="primary"],.stDownloadButton>button {background:#087f70;border-color:#087f70;color:white}
+.stButton>button[kind="primary"]:hover,.stDownloadButton>button:hover {background:#09695e;color:white}
+button:focus-visible,input:focus-visible {outline:2px solid var(--accent)!important;outline-offset:3px}
+button:disabled {opacity:.45}
+[data-baseweb="input"],[data-baseweb="input"] input,[data-baseweb="select"]>div {background:var(--raised)!important;color:var(--text)!important;border-color:var(--line)!important}
+[data-testid="stNumberInput"] button {background:var(--raised);color:var(--text)}
+[data-testid="stExpander"] {background:var(--surface);border-color:var(--line);border-radius:10px;color:var(--text)}
+[data-testid="stExpander"] summary:hover {color:var(--accent)}
+[data-baseweb="tab-list"] {background:transparent;border-bottom:1px solid var(--line);gap:24px}
+[data-baseweb="tab"] {color:var(--muted);font-weight:600;background:transparent}
+[data-baseweb="tab"][aria-selected="true"] {color:var(--accent)}
+[data-baseweb="tab-highlight"] {background:var(--accent)}
+[data-testid="stAlert"] {border-radius:12px;color:var(--text);border:1px solid var(--line)}
+[data-testid="stAlertContainer"] {color:var(--text);background:var(--raised)}
+.insight-card {background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;margin:18px 0;box-shadow:0 4px 16px var(--shadow)}
+.card-label {font-size:.65rem;font-weight:750;color:var(--muted);letter-spacing:.12em;margin-bottom:18px}
+.legend-row {display:flex;align-items:center;gap:9px;font-size:.79rem;margin:17px 0;color:var(--text)}
+.legend-dot {width:8px;height:8px;border-radius:50%;flex-shrink:0}.green {background:#20b890}.red {background:#ef8767}
+.legend-tag {margin-left:auto;background:var(--raised);border-radius:5px;padding:4px 7px;font-size:.63rem;color:var(--muted)}
+.card-footnote {font-size:.73rem;color:var(--muted);line-height:1.6;border-top:1px solid var(--line);padding-top:14px;margin-top:18px}
+.workflow-row {display:flex;gap:12px;margin:17px 0}
+.workflow-row>span {background:var(--soft);color:var(--accent);border-radius:9px;font-size:.65rem;font-weight:750;height:30px;width:30px;display:grid;place-items:center;flex-shrink:0}
+.workflow-row strong {font-size:.78rem;color:var(--text);font-weight:600}
+.workflow-row p {font-size:.73rem;color:var(--muted);margin:4px 0 0;line-height:1.6}
+.empty-state {position:relative;text-align:center;background:radial-gradient(ellipse at 50% 40%,var(--soft),var(--preview) 75%);min-height:300px;border:1px solid var(--line);border-radius:14px;padding:60px 20px 30px;margin-top:14px;overflow:hidden}
+.empty-state h3 {color:var(--text);font-size:1.15rem!important;margin:22px 0 8px;padding:0}
+.empty-state p {color:var(--muted);font-size:.82rem;line-height:1.8;margin:0}
+.preview-label {position:absolute;top:18px;left:20px;right:20px;display:flex;align-items:center;gap:7px;font-size:.58rem;font-weight:650;letter-spacing:.1em;color:var(--muted)}
+.preview-state {margin-left:auto;font-size:.55rem;color:var(--muted);border:1px solid var(--line);border-radius:5px;padding:5px 7px}
+.viewfinder {width:70px;height:60px;margin:12px auto 0;border:1px solid var(--accent);border-radius:16px;display:grid;place-items:center;background:var(--surface);box-shadow:0 8px 30px var(--shadow);transform:rotate(-5deg)}
+.viewfinder span {width:25px;height:25px;border:2px solid var(--accent);border-radius:50%;box-shadow:0 0 0 6px var(--soft)}
+.preview-formats {color:var(--muted);font-size:.58rem;letter-spacing:.19em;margin-top:24px}
+.section-note {color:var(--muted);font-size:.72rem;border-top:1px solid var(--line);padding-top:18px;margin-top:30px}
+@media(max-width:900px) {h1 {font-size:2rem!important}.page-heading {align-items:flex-start;flex-direction:column;gap:12px}[data-testid="stMetric"] {padding:18px;min-height:115px}[data-testid="stMetricValue"] {font-size:2rem}.block-container {padding-top:2rem}}
+/* Refined scale and native-widget appearance in both themes. */
+.st-key-inspection-panel {background:var(--surface);border-color:var(--line)!important;border-radius:14px}
+[data-testid="stExpander"] summary {background:var(--surface)!important;color:var(--text)!important}
+[data-testid="stSidebarCollapseButton"] button,[data-testid="stExpandSidebarButton"] button {color:var(--muted)!important}
+[data-testid="stSidebar"] [data-testid="stIconMaterial"] {color:var(--muted)!important}
+[data-testid="stCheckbox"] label {background:transparent!important}
+[data-testid="stSidebar"] [data-testid="stRadioOption"] {align-self:stretch}
+.stApp p,.stApp h1,.stApp h2,.stApp h3,.stApp label,.stApp input,.stApp button,.stApp small,.stApp [data-testid="stMetricValue"] {font-family:Inter,"Segoe UI",sans-serif}
+.block-container {max-width:1480px;padding:2.6rem 2.5rem 1.5rem}
+[data-testid="stVerticalBlock"] {gap:1rem}
+h1 {font-size:clamp(1.9rem,3vw,2.8rem)!important}
+[data-testid="stSidebar"] {min-width:260px;max-width:290px}
+[data-testid="stSidebarUserContent"] {padding:1.4rem 1.25rem!important}
+.brand {font-size:1.4rem;margin-bottom:6px}
+.brand-mark {width:36px;height:38px;border-radius:11px;background:var(--accent);color:var(--on-accent);box-shadow:none}
+[data-testid="stSidebar"] hr {margin:1.1rem 0}
+[data-testid="stSidebar"] [role="radiogroup"] label {box-sizing:border-box;min-height:46px;margin:0;padding:10px 12px;background:transparent;border-color:transparent}
+[data-testid="stSidebar"] [role="radiogroup"] label {width:100%}
+[data-testid="stSidebar"] [role="radiogroup"] label:hover {background:var(--raised)}
+[data-testid="stSidebar"] [role="radiogroup"] label:has(input:checked) {background:var(--soft);border-color:var(--accent)}
+[data-testid="stSidebar"] [role="radiogroup"] label p {font-size:.86rem!important;font-weight:550}
+.eyebrow {margin-bottom:8px}
+.intro {margin:0 0 8px;font-size:.92rem}
+[data-testid="stMetric"] {padding:17px 18px;min-height:116px;border-radius:12px}
+[data-testid="stMetric"]:before {display:none}
+[data-testid="stMetricLabel"],[data-testid="stMetricLabel"] p {color:var(--muted)!important;font-size:.76rem!important;line-height:1.4!important;white-space:normal!important;overflow:visible!important}
+[data-testid="stMetricValue"] {font-size:2.1rem!important;font-weight:650}
+.workspace-divider {margin:4px 0 7px}
+[data-testid="stVerticalBlockBorderWrapper"]>div,
+[data-testid="stLayoutWrapper"]>[data-testid="stVerticalBlock"]:is([style*="border"]) {padding:22px!important;border:1px solid var(--line)!important;border-radius:14px!important}
+[data-testid="stFileUploader"] {padding:10px;border-radius:11px}
+[data-testid="stFileUploaderDropzone"] {padding:14px 8px;background:transparent!important;color:var(--text)!important;gap:10px}
+[data-testid="stFileUploaderDropzoneInstructions"] span {font-size:.85rem}
+[data-testid="stFileUploaderDropzone"] svg {color:var(--muted)}
+[data-testid="stButton"] button,[data-testid="stDownloadButton"] button,[data-testid="stFileUploader"] button {min-height:42px;padding:9px 14px;background:var(--surface)!important;color:var(--text)!important;border:1px solid var(--line)!important;font-size:.84rem}
+[data-testid="stButton"] button[kind="primary"],[data-testid="stDownloadButton"] button {background:var(--accent)!important;color:var(--on-accent)!important;border-color:var(--accent)!important}
+[data-testid="stButton"] button:hover,[data-testid="stFileUploader"] button:hover {border-color:var(--accent)!important}
+button [data-testid="stMarkdownContainer"] p {font-size:inherit!important}
+[data-baseweb="base-input"],[data-testid="stNumberInput"] button {background:var(--raised)!important;color:var(--text)!important}
+[data-testid="stExpander"] details {background:var(--surface);border:1px solid var(--line)!important;border-radius:10px;color:var(--text)}
+[data-testid="stExpander"] summary:hover {background:var(--raised)!important;color:var(--text)!important}
+[data-testid="stSlider"] [data-testid="stTickBar"], [data-testid="stSlider"] [data-testid="stTickBar"] * {color:var(--muted)!important}
+[data-testid="stSliderTickBar"],[data-testid="stSliderThumbValue"] {color:var(--muted)!important}
+[role="slider"] {background:var(--accent)!important}
+[data-baseweb="tab"] {color:var(--muted)!important;min-height:44px}
+[data-baseweb="tab"][aria-selected="true"] {color:var(--accent)!important}
+[data-testid="stAlert"] {background:var(--raised)!important;color:var(--text)!important;border-radius:10px}
+[data-testid="stAlertContainer"],[data-testid="stAlertContentInfo"],[data-testid="stAlertContentSuccess"],[data-testid="stAlertContentError"],[data-testid="stAlertContentWarning"] {background:transparent!important;color:var(--text)!important}
+[data-testid="stAlert"] svg {color:var(--accent)}
+[data-testid="stAlert"]:has([data-testid="stAlertContentError"]),[data-testid="stAlert"]:has([data-testid="stAlertContentWarning"]) {background:var(--warning-soft)!important;border-color:var(--danger)}
+[data-testid="stAlert"]:has([data-testid="stAlertContentError"]) svg {color:var(--danger)}
+[data-baseweb="tooltip"] {background:var(--raised)!important;color:var(--text)!important;border:1px solid var(--line)}
+.insight-card {padding:18px;margin:0 0 14px;border-radius:12px}
+.card-label {margin-bottom:16px}
+.legend-row {gap:8px;font-size:.8rem;margin:13px 0;flex-wrap:wrap}
+.green {background:var(--accent)}
+.red {background:var(--danger)}
+.card-footnote {padding-top:12px;margin-top:15px;font-size:.74rem}
+.workflow-row {gap:11px;margin:16px 0 0}
+.workflow-row>span {height:28px;width:28px;border:1px solid var(--line);border-radius:8px}
+.workflow-row strong {font-size:.8rem}
+.workflow-row p {font-size:.75rem;margin-top:3px}
+.empty-state {box-sizing:border-box;min-height:290px;padding:64px 20px 26px;margin-top:4px;border-radius:11px}
+.empty-state h3 {font-size:1.08rem!important;margin:20px 0 7px}
+.preview-label {top:16px;left:16px;right:16px;font-size:.59rem;letter-spacing:.07em}
+.preview-state {font-size:.55rem;letter-spacing:.03em}
+.viewfinder {width:62px;height:56px;margin:0 auto;transform:none}
+.viewfinder span {width:23px;height:23px}
+[data-testid="stImage"] img {border-radius:9px}
+.section-note {margin-top:16px;padding-top:16px;line-height:1.6}
+@media(min-width:769px) and (max-width:1150px) {
+ .block-container {padding-left:1.5rem;padding-right:1.5rem}
+ [data-testid="stHorizontalBlock"]:has(.insight-card) {flex-wrap:wrap}
+ [data-testid="stHorizontalBlock"]:has(.insight-card)>[data-testid="stColumn"] {width:100%!important;flex:1 1 100%!important;min-width:0!important}
+ [data-testid="stMetric"] {padding:14px 12px;min-height:112px}
+ [data-testid="stMetricLabel"] p {font-size:.7rem!important}
+ .page-heading {align-items:flex-start;flex-wrap:wrap}
+}
+@media(max-width:768px) {
+ .block-container {padding:1.8rem 1rem 1rem}
+ .page-heading {flex-direction:column;align-items:flex-start;gap:12px}
+ .intro {font-size:.85rem}
+ [data-testid="stHorizontalBlock"]:has([data-testid="stMetric"]) {flex-wrap:wrap;gap:10px}
+ [data-testid="stHorizontalBlock"]:has([data-testid="stMetric"])>[data-testid="stColumn"] {flex:1 1 calc(50% - 10px)!important;min-width:0!important;width:calc(50% - 10px)!important}
+ [data-testid="stMetric"] {padding:14px;min-height:108px}
+ [data-testid="stMetricValue"] {font-size:1.8rem!important}
+ [data-testid="stLayoutWrapper"]>[data-testid="stVerticalBlock"]:is([style*="border"]) {padding:16px!important}
+ [data-testid="stFileUploaderDropzone"] {flex-wrap:wrap;justify-content:center}
+ .empty-state {min-height:270px;padding-left:12px;padding-right:12px}
+ .preview-state {display:none}
+}
+@media(prefers-reduced-motion:reduce) {*,*::before,*::after {transition:none!important;animation:none!important}}
+
+/* Keep the current frame and its measurements in one inspection workspace. */
+.block-container {max-width:1760px}
+.st-key-source-panel {background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.st-key-source-panel [data-testid="stFileUploader"] {border:0;padding:0;background:transparent}
+.st-key-source-panel .eyebrow {margin-bottom:0}
+.st-key-source-panel [data-testid="stFileUploaderDropzone"] {padding:10px 12px;background:var(--raised)!important;border:1px dashed var(--line);border-radius:10px}
+.st-key-source-panel [data-testid="stVerticalBlock"] {gap:.5rem}
+.st-key-inspection-panel,.st-key-summary-panel {height:100%;min-width:0;background:var(--surface);border-color:var(--line)!important;border-radius:14px}
+.st-key-inspection-panel .empty-state {min-height:390px}
+.st-key-summary-panel [data-testid="stVerticalBlock"] {gap:.75rem}
+.st-key-frame-metrics [data-testid="stMetric"] {min-height:100px;padding:14px 12px;background:var(--raised);box-shadow:none}
+.st-key-frame-metrics [data-testid="stMetricValue"] {font-size:1.9rem!important}
+.st-key-frame-metrics [data-testid="stMetricLabel"] p {font-size:.73rem!important}
+.st-key-frame-metrics [data-testid="stHorizontalBlock"] {gap:10px;flex-wrap:nowrap}
+.st-key-frame-metrics [data-testid="stColumn"] {min-width:0!important;flex:1 1 0!important;width:auto!important}
+.status-label {margin:10px 0 0}
+.detection-legend {border-top:1px solid var(--line);padding-top:18px;margin-top:2px}
+.detection-legend .card-label {margin-bottom:10px}
+.detection-legend .legend-row:last-child {margin-bottom:0}
+.st-key-summary-panel [data-testid="stCaptionContainer"] p {font-size:.72rem;line-height:1.6}
+@media(min-width:1151px) {
+ .st-key-results-workspace>[data-testid="stVerticalBlock"]>[data-testid="stHorizontalBlock"] {align-items:stretch}
+}
+@media(max-width:1150px) {
+ .st-key-results-workspace [data-testid="stHorizontalBlock"]:has(.st-key-inspection-panel) {flex-wrap:wrap}
+ .st-key-results-workspace [data-testid="stHorizontalBlock"]:has(.st-key-inspection-panel)>[data-testid="stColumn"] {flex:1 1 100%!important;width:100%!important;min-width:0!important}
+ .st-key-source-panel [data-testid="stHorizontalBlock"] {flex-wrap:wrap}
+ .st-key-source-panel [data-testid="stHorizontalBlock"]>[data-testid="stColumn"] {min-width:220px!important}
+ .st-key-frame-metrics [data-testid="stHorizontalBlock"]>[data-testid="stColumn"] {flex:1 1 0!important;width:auto!important;min-width:0!important}
+}
+@media(max-width:600px) {
+ .st-key-source-panel [data-testid="stHorizontalBlock"]>[data-testid="stColumn"] {flex:1 1 100%!important;width:100%!important;min-width:0!important}
+ .st-key-inspection-panel .empty-state {min-height:280px}
+}
