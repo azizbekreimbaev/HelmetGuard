@@ -1,0 +1,52 @@
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.coverage
+.coverage.*
+htmlcov/
+
+# Build and packaging outputs
+build/
+dist/
+*.egg-info/
+
+# Secrets and machine-specific settings
+.env
+.env.*
+!.env.example
+!.env.sample
+.streamlit/secrets.toml
+.aws/
+*.pem
+*.key
+.idea/
+.vscode/
+
+# Downloaded/trained model weights (see README for setup)
+*.pt
+*.pth
+*.onnx
+*.engine
+
+# Inference outputs and local visual reviews
+/runs/
+/ui-review/
+/.portfolio-build/
+/contrast-check-dark.png
+
+# Saved Colab page and its downloaded assets
+/Untitled0.ipynb - Colab.html
+/Untitled0.ipynb - Colab_files/
+
+# Logs and operating-system files
+*.log
+.DS_Store
+Thumbs.db
+Desktop.ini
